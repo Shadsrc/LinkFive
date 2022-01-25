@@ -7,10 +7,13 @@
     </head>
 
     <body>
-        <div class="wrap">
+
+        <div class = "wrap">
             <h1 class="title_LF"></h1>
             <p class="txt_Welcome"></p>
             <button class="buttonLogin" type="button">Login</button>
+           
         </div>
+        
     </body>
 </html>
