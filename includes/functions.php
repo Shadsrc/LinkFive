@@ -1,6 +1,6 @@
 <?php
   /*
- * Ajout du menu et du sous menu
+ * Ajout du menu et des dependances
  */
 
   function wplf_Add_My_Admin_Link()
@@ -13,14 +13,6 @@
     );
     
   }
-  function wplf_Add_My_Submenu_Link(){
-    add_submenu_page(
-       'PluginLinkedIn/includes/wplf-first-page.php',
-       'Login','login',
-       'manage_option',
-       'PluginLinkedIn/includes/wplf-second-page.php'
-    );
-  }
   function style_LinkFive()
   {
     wp_enqueue_style ('mystyle_LinkFive', plugins_url('/PluginLinkedIn/assets/css/styleLinkFive.css')); 
@@ -31,7 +23,7 @@
     wp_enqueue_script ('myscript_LinkFive', get_template_directory_uri (). '/js/JS-LinkFive.js', array());
   }
 
-  // Appel du hook "action" sur admin menu, lance la fonction "wplf_Add_My_Admin_Link()"
+  // Appel du hook "add_action" pour entrer les scripts et les styles dans les dépendances Wordpress
   add_action( 'admin_menu', 'wplf_Add_My_Admin_Link' );
   add_action( 'admin_menu', 'wplf_Add_My_Submenu_Link' );
   add_action('wp_enqueue_scripts', 'style_LinkFive');

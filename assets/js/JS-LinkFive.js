@@ -1,6 +1,5 @@
 
 //Renvoie une chaine de caractère aléatoire de longueur 6
-// Verifier pour le state si c'est necessaire !!!!
 
 function Chaine_alea(){
 
@@ -16,16 +15,3 @@ function Chaine_alea(){
 console.log(Chaine_alea());
 
 /* ----------------------------------------------------------------------------------------------------------*/
-
-fetch("http://10.0.10.139/wp-admin/?code")
-  .then(function(res){
-    if(res.ok){
-      return res.json();
-    }
-  })
-  .then(function(value) {
-    console.log(value);
-  })
-  .catch(function(err) {
-    // Une erreur est survenue
-  });
