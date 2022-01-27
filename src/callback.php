@@ -6,8 +6,15 @@
     use GuzzleHttp\Client;
     use GuzzleHttp\EntityBody;
 
+    $code_linkedin = $_GET ['code'];
+
     $client = new Client([
         'base_uri' =>'https://www.linkedin.com/oauth/v2/',
+        'timeout' => 2.0,
+    ]);
+
+    $receive = new Client([
+        'base_uri' =>'https://api.linkedin.com/v2/',
         'timeout' => 2.0,
     ]);
 
@@ -23,8 +30,17 @@
         ]
     ]);
 
-    $code = $response->getStatusCode(); 
-    $reason = $response->getReasonPhrase(); 
-    $body = $response->getBody(); 
- 
-    file_put_contents('OAuth.log',$code.' ',$reason.' ',$body.PHP_EOL, FILE_APPEND);
+    $Token_LinkedIn = json_decode('acess_token');
+
+    if(empty($Token_LinkedIn) == false){
+        $response  =  $receive -> request ( 'GET' ,  'me' ,  [
+
+            $headers = ['Authorization' => 'Bearer ' . $Token_LinkedIn]
+        ]);
+    }
+
+    /*if ($reponse){
+        header('Location: http://10.0.10.139/wp-admin');
+        exit();
+
+    }
