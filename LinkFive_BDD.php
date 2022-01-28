@@ -2,14 +2,50 @@
       require __DIR__.'/../callback.php';
       require __DIR__.'/../wplf-first-page.php';
 
-        // Connexion à MySQL
 
-    try{
-        $connection=mysqli_connect("localhost", "root", "Userstagetec6", "db_wp");
+      $servername = 'localhost';
+      $username = 'root';
+      $password = 'Userstagetec6';
+      
+      try{
+          
+          //Création de la base de données
 
-        } catch (Exception $e){
-            echo 'connection impossible : '.$e->getMessage();
-        }
+          $conn = new PDO("mysql:host=$servername", $username, $password);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          
+            $DBLinkFive = "CREATE DATABASE IF NOT EXISTS dbLinkFive_wp";
+
+            $conn->exec($DBLinkFive);
+
+          //Création de la table côté Application
+
+            $reqAPP = "CREATE TABLE linkfive_app_bdd(
+
+                client_id VARCHAR(255) PRIMARY KEY,
+                client_secret VARCHAR(255)
+            
+            )";
+
+            $conn->exec($reqAPP);
+
+          //Création de la table côté utilisateur
+
+            $reqUSER = "CREATE TABLE linkfive_user_bdd(
+    
+                unique_state VARCHAR(255) PRIMARY KEY,
+                code_LinkedIn VARCHAR(255),
+                Token_LinkedIn VARCHAR(255)
+                
+            )";
+
+            $conn->exec($reqUSER);
+          
+      }
+      
+      catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+      }
 
         //Ajout des valeurs du type identifiant et code de l'application LinkedIn puis de l'utilisateur
         
