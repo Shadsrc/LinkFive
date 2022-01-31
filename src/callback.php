@@ -29,18 +29,22 @@
             'client_secret'=> $Client_secret
         ]
     ]);
+    var_dump( $response );
 
-    $Token_LinkedIn = json_decode('acess_token');
 
-    if(empty($Token_LinkedIn) == false){
-        $response  =  $receive -> request ( 'GET' ,  'me' ,  [
+    echo $receive -> getStatusCode();
 
-            $headers = ['Authorization' => 'Bearer ' . $Token_LinkedIn]
-        ]);
-    }
+    if ($receive -> getStatusCode() == 200)
+    {
+        $body = $receive -> getBody();
+        $json = json_decode($body, true);
+        $token = $json['access_token'];
+    } else {die("Ne marche pas");}
 
-    /*if ($reponse){
-        header('Location: http://10.0.10.139/wp-admin');
-        exit();
+    var_dump($receive);
+    file_put_contents ('token.txt',$receive, $token, FILE_APPEND);
+    
 
-    }
+
+    header('Location: '.$url.$_SERVER['SERVER_NAME'].'/wp-admin/admin.php?page=PluginLinkedIn%2Fincludes%2Fwplf-first-page.php');
+    exit();
