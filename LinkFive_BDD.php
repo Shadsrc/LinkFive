@@ -2,21 +2,13 @@
       require __DIR__.'/../callback.php';
       require __DIR__.'/../wplf-first-page.php';
 
-
-      $servername = 'localhost';
-      $username = 'root';
-      $password = 'Userstagetec6';
-      
       try{
           
-          //Création de la base de données
+          //Connexion à la base de données
 
           $conn = new PDO("mysql:host=$servername", $username, $password);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
-            $DBLinkFive = "CREATE DATABASE IF NOT EXISTS dbLinkFive_wp";
-
-            $conn->exec($DBLinkFive);
 
           //Création de la table côté Application
 

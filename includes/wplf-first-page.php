@@ -34,6 +34,8 @@
             <a class = "buttonLogin" href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=<?php echo $Client_id; ?>&redirect_uri=<?php echo $callback; ?>&state=<?php echo $unique_state; ?>&scope=<?php echo $scope; ?> " target = "_blank">
                 <input type="button" value="Login">
             </a>
+
+           
                
         </div>
     </body>
@@ -41,11 +43,7 @@
 
 
 <!----------------------------------------------------------Test ----------------------------------------------------------->
-<?php include(__DIR__."/../callback.php"); 
 
-echo $Token_LinkedIn;
-
-?>
 
 
 
