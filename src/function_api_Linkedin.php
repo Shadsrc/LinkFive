@@ -45,7 +45,7 @@
             return $token;
 
         } else {
-            echo "ERREUR";
+            echo "ERROR file : 'body.json' doesn't exist";
         }
     }
     
@@ -126,7 +126,7 @@
 
     function getEmail(){
 
-        if (file_exists(__DIR__.'bodyEmail.json')){
+        if (file_exists(__DIR__.'/bodyEmail.json')){
             
             $bodyEmail = file_get_contents(__DIR__.'/bodyEmail.json');
             return $bodyEmail;
@@ -144,6 +144,36 @@
                     file_put_contents(__DIR__.'/bodyEmail.json',$bodyEmail);
 
                     return $bodyEmail;
+
+                }
+
+            }catch(Exception $e){
+                echo "Erreur : " . $e->getMessage();
+            }
+        }
+            
+      
+    }
+    function getPosts(){
+
+        if (file_exists(__DIR__.'/bodyPosts.json')){
+            
+            $bodyPosts = file_get_contents(__DIR__.'/bodyPosts.json');
+            return $bodyPosts;
+
+        } else {
+
+            $response  =  getClient() -> request ( 'GET' ,  'shares?q=owners&owners={URN}&sortBy=LAST_MODIFIED&sharesPerOwner=5');
+
+            try {
+
+                if ($response -> getStatusCode() == 200)
+                {
+
+                    $bodyPosts = (string)$response -> getBody();
+                    file_put_contents(__DIR__.'/bodyPosts.json',$bodyPosts);
+
+                    return $bodyPosts;
 
                 }
 

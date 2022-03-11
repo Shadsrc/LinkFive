@@ -5,6 +5,7 @@ h1.title_LF{
     font-size: 54pt;
     text-align: center;
     margin-left: 36%;
+    
     width: 80%;
     max-width: 400px;
     min-width: 400px;
@@ -18,25 +19,38 @@ h1.title_LF{
 }
 
 .txt_Welcome{
+
     font-size: 15pt;
     text-align: center;
     margin-left: 23%;
+    
     width: 50%;
     max-width: 1000px;
     min-width: 700px;
 }
 
 .txt_Email{
+
     text-align: center;
     margin-left: 23%;
+    margin-right: 77%;
     width: 50%;
     max-width: 1000px;
     min-width: 700px;
 }
 
+.img_Profile{
+
+    text-align:center; 
+    margin-left: 44.80%;
+    
+}
+
 .buttonLogin{
+
     background-color:#0077B5;
     margin-left: 43.15%; 
+    
     
 }
 

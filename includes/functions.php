@@ -19,8 +19,8 @@
     wp_enqueue_style ('mystyleLogin_LinkFive', plugins_url('/PluginLinkedIn/assets/css/styleLinkFiveLogin.css')); 
   }
 
-
   // Appel du hook "add_action" pour entrer les scripts et les styles dans les dépendances Wordpress
   add_action( 'admin_menu', 'wplf_Add_My_Admin_Link' );
   add_action('wp_enqueue_scripts', 'style_LinkFive');
+
  
