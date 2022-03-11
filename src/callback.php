@@ -1,24 +1,27 @@
-<?php 
+<?php
 require __DIR__.'/function_api_Linkedin.php';
 
     $code_linkedin = $_GET ['code'];
 
     try{
 
-        var_dump(getToken($code_linkedin));
+    $jsonBodyToken = getToken($code_linkedin);
+    file_put_contents('body.json',$jsonBodyToken);
 
-    }catch(Exception $e){
-
-        echo "Erreur : " . $e->getMessage();
+    /*$jsonBodyId = getId();
+    file_puts_content('bodyId.json',$jsonBodyId);
+        var_dump($jsonBodyId);
+    $jsonBodyEmail = getEmail();
+    file_puts_content('bodyEmail.json',$jsonBodyEmail);
+    */
 
     }
-    
-        var_dump(getToken($code_linkedin));
 
-        getId();
-        getEmail();
+    catch(Exception $e){
+        echo "Erreur : " . (string) $e->getMessage();
+    }
 
-    
-    /*header('Location: '.$url.$_SERVER['SERVER_NAME'].'/wp-admin/admin.php?page=PluginLinkedIn%2Fincludes%2Fwplf-first-page.php');
+  
+        
+    header('Location: '.$url.$_SERVER['SERVER_NAME'].'/wp-admin/admin.php?page=PluginLinkedIn%2Fincludes%2Fwplf-first-page.php');
     exit();
-    */

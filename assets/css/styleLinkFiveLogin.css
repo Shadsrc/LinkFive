@@ -18,13 +18,21 @@ h1.title_LF{
 }
 
 .txt_Welcome{
+    font-size: 15pt;
     text-align: center;
-    margin-left: 22%;
+    margin-left: 23%;
     width: 50%;
     max-width: 1000px;
     min-width: 700px;
 }
 
+.txt_Email{
+    text-align: center;
+    margin-left: 23%;
+    width: 50%;
+    max-width: 1000px;
+    min-width: 700px;
+}
 
 .buttonLogin{
     background-color:#0077B5;

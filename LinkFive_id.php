@@ -1,6 +1,6 @@
 <?php 
 
-	require_once '/var/www/html/wp-config.php';
+	//require_once '/var/www/vialtic/wp-config.php';
 
 	// Vérifie si le protocole HTTP ou HTTPS est activé par le serveur 
 
@@ -18,11 +18,14 @@
 	$Client_secret = 'dQBCgKRk1LfNR7kq'; 													       // Client_secret
 	$scope = 'r_liteprofile%20r_emailaddress%20w_member_social';						          // Demande de Permission
 
+	
 	// Identifiant de la BDD
- var_dump(DB_HOST);
+ 
+	/*
 	$servername = DB_HOST;
     $username = DB_USER;
     $password = DB_PASSWORD;
 	$dbName = DB_NAME;
-    
+	*/
+ 
 ?>

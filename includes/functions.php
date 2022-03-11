@@ -15,7 +15,8 @@
   }
   function style_LinkFive()
   {
-    wp_enqueue_style ('mystyle_LinkFive', plugins_url('/PluginLinkedIn/assets/css/styleLinkFive.css')); 
+    wp_enqueue_style ('mystyle_LinkFive', plugins_url('/PluginLinkedIn/assets/css/styleLinkFive.css'));
+    wp_enqueue_style ('mystyleLogin_LinkFive', plugins_url('/PluginLinkedIn/assets/css/styleLinkFiveLogin.css')); 
   }
 
 

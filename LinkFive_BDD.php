@@ -1,6 +1,6 @@
 <?php require __DIR__.'/../LinkFive_id.php';
       require __DIR__.'/../callback.php';
-      require __DIR__.'/../wplf-first-page.php';
+      require __DIR__.'/../if_NotConnect.php';
 
       try{
           
