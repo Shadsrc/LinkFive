@@ -53,7 +53,7 @@
                 <input type="button" value="Se déconnecter">
             </a>
 
-            <p class ="txt_ShortC"><?php echo $url; ?></p>
+            
            
                
         </div>
