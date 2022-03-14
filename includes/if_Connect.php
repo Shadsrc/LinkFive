@@ -12,11 +12,13 @@
     //Récupération de l'adresse mail
     $jsonEmail = json_decode(getEmail(),true);
     $email = $jsonEmail['elements'][0]['handle~']['emailAddress'];
-/*
+
     //récuperation des postes
     $jsonPosts = json_decode(getPosts(),true);
-    $posts = $jsonPosts[''];
-*/ 
+    $url = $jsonPosts['content']['contentEntities'][0]['entity']['entityLocation'];
+    $text = $jsonPosts['content']['description'];
+    
+
 ?>
  
  <!DOCTYPE html>
@@ -51,17 +53,11 @@
             <?php $unique_state = bin2hex(random_bytes(16)); ?>
             
             <!-- Bouton login pour la connection à linkedIn -->
-            <a class = "buttonLogin" href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=<?php echo $Client_id; ?>&redirect_uri=<?php echo $callback; ?>&state=<?php echo $unique_state; ?>&scope=<?php echo $scope; ?> " target = "_blank">
+            <a class = "buttonLogin" href="">
                 <input type="button" value="Se déconnecter">
             </a>
 
-            <li id="pages">
-                <h2><?php _e('Pages :'); ?></h2>
-                <form action="<?php bloginfo('url'); ?>" method="get">
-                    <?php wp_dropdown_pages(); ?>
-                    <input type="submit" name="submit" value="Poster !" />
-                </form>
-            </li>
+            <p class ="txt_ShortC"><?php echo $url; ?></p>
            
                
         </div>
