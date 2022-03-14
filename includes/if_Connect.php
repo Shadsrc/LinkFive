@@ -46,14 +46,10 @@
             <h1 class="title_LF">L__kFive</h1>
             <img class ="img_Profile" src = <?php echo $picture; ?>>
             <p class="txt_Welcome">Bienvenue <?php echo $LastN." ".$firstN;?> </p>
-            
             <p class="txt_Email"><?php echo $email; ?> </p>
-           
-            <!-- Permet de générer un code unique pour identifier l'utilisateur -->
-            <?php $unique_state = bin2hex(random_bytes(16)); ?>
             
-            <!-- Bouton login pour la connection à linkedIn -->
-            <a class = "buttonLogin" href="">
+            <!-- Bouton login pour la déconnection à linkedIn -->
+            <a class = "buttonLogin" href='/wp-content/plugins/PluginLinkedIn/src/deconnect.php'>
                 <input type="button" value="Se déconnecter">
             </a>
 
