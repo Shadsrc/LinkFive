@@ -14,5 +14,5 @@ NOTICE
 => Second step
 
 	_ Once your LinkedIn is registered, you can observe your account on LinkFive's page. 
-	  indicate the page where you want to display your LinkedIn posts .
+	_ Copy the shortcode to paste it on your Wordpress page.
 Enjoy!
